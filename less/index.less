@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	box-sizing: border-box;
 	line-height: 1;
 }
 ol, ul {
@@ -49,11 +50,180 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+// variables
+@import url('https://fonts.googleapis.com/css?family=Bitter|Staatliches|Yantramanav&display=swap');
+.ul(){
+	list-style-type: square;
+}
+.text-height(){
+	line-height: 1.5em;
+}
+
+
+@p-font: 'Bitter', serif; 
+@h2-font: 'Staatliches', cursive;
+@h1-font: 'Yantramanav', sans-serif;
+@header-footer: rgb(97, 212, 154);
+// variables end
+
 * {
-    box-sizing: border-box;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
 }
 
 html, body {
     height: 100%;
 }
+// write CSS here
+body {
+	box-sizing: border-box;
+	margin: 0 auto;
+	background-color: lavender;
+}
+
+header {
+	height: 5%;
+	background: @header-footer;
+	
+	nav {
+			@media(max-width: 500px){
+				display: flex;
+				height: 100%;
+	}
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding-top: 1%; 
+			a {
+				color: blue;
+				font-family: @h1-font;
+				font-size:1.5rem;
+				text-decoration: none;
+			}	
+		a:hover {
+				color: white;
+		}
+		a:visited {
+			color: none;
+		}
+	}
+}
+
+.intro {
+			@media(max-width: 500px){
+				flex-direction: column;
+			}
+			display: flex;
+			padding: 4%;
+			height: 40%;
+			background-image: url(../bg-img2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: white;
+			font-family: @p-font;
+
+		h1 {
+			font-family: @h1-font;
+			font-size: 2rem;
+			@media(max-width: 500px){
+				margin-bottom: 4%;
+			}
+			
+		}
+		p {
+			margin-right: 5%;
+			@media(max-width: 500px){
+				margin-bottom: 2%;
+			}
+		}
+		h2 {
+			font-family: @h2-font;
+			font-size: 1.5rem;
+				@media(max-width: 500px){
+					margin-top: 4%;
+				}
+			}
+}
+
+	#skills {
+			@media(max-width: 500px){
+				height: 42%;
+				padding: 2%;
+			}
+			height: 20%;
+			display: flex;
+			justify-content: space-between;
+		.text-height();
+		.skill {
+			width: 30%;
+		}
+		p {
+			font-family: @p-font;
+		}
+		i{
+			margin-left: 45%;
+			margin-bottom: 5%;
+			margin-top: 5%;
+		}
+	}
+	#works {
+		padding: 2% 2%;
+		display: flex;
+		.text-height();
+		background: @header-footer;
+			p{
+				margin: 2% 2%;
+				font-family: @p-font;
+			}
+			ul{
+				margin-left: 5%;
+				.ul();
+			}
+			h2 {
+				font-size: 1.5rem;
+				margin: 2% 2%;
+				font-family: @h2-font;
+			}
+	}
+
+	.education {
+			@media(max-width: 500px){
+				display: flex;
+				flex-direction: column;
+				
+			}
+		display: flex;
+		justify-content: space-evenly;
+		padding: 4%;
+		.text-height();
+		ul {
+			margin-left: 40%;
+			.ul();
+		}
+		p{
+			font-family: @p-font;
+		}
+		h2 {
+			text-decoration: underline;
+			padding-bottom: 5%;
+			font-size: 1.5rem;
+			font-family: @h2-font;
+		}
+		
+	}
+
+	footer {
+		padding-top: 2%;
+		height: 10%;
+		text-align: center;
+		background: @header-footer;
+		.text-height();
+		p {
+			font-family: @p-font;
+		}
+	}
+
 
